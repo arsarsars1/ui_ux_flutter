@@ -210,7 +210,7 @@ class _SearchScreenState extends State<SearchScreen>
                       builder: (p0, isKeyboardVisible) => !isKeyboardVisible
                           ? Padding(
                               padding: const EdgeInsets.only(
-                                  left: 30, right: 30, bottom: 80),
+                                  left: 30, right: 30, bottom: 100),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
