@@ -1,0 +1,35 @@
+name: demo
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  blur: ^4.0.0
+  google_maps_flutter: ^2.7.0
+  flutter_animate: ^4.5.0
+  flutter_keyboard_visibility: ^6.0.0
+  widget_to_marker:
+    git:
+      url: https://github.com/arsarsars1/widget_to_marker.git
+      ref: main
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/
