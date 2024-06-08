@@ -27,11 +27,11 @@ class _MarkerIconWidgetState extends State<MarkerIconWidget> {
       alignment: Alignment.center,
       decoration: BoxDecoration(
           color: AppColor.primary,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
               topRight: Radius.circular(20),
               topLeft: Radius.circular(20),
               bottomRight: Radius.circular(20))),
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       clipBehavior: Clip.antiAlias,
       child: widget.showMarkerDetail
           ? Text(widget.text,

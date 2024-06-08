@@ -16,7 +16,7 @@ class ItemWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: height,
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       clipBehavior: Clip.antiAlias,
       child: Stack(children: [
         Stack(
@@ -41,12 +41,12 @@ class ItemWidget extends StatelessWidget {
                   overlay: Container(
                     width: double.infinity,
                     height: 45,
-                    margin: EdgeInsets.only(left: 8),
-                    decoration: BoxDecoration(),
+                    margin: const EdgeInsets.only(left: 8),
+                    decoration: const BoxDecoration(),
                     clipBehavior: Clip.antiAlias,
                     child: Row(
                       children: [
-                        Expanded(
+                        const Expanded(
                             child: Center(
                                 child: Text(
                           "GladKova st.,25",
@@ -56,12 +56,12 @@ class ItemWidget extends StatelessWidget {
                         IconButton(
                           onPressed: () {},
                           padding: EdgeInsets.zero,
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.keyboard_arrow_right_outlined,
                             size: 16,
                             color: Color(0xFF9B8970),
                           ),
-                          style: ButtonStyle(
+                          style: const ButtonStyle(
                               backgroundColor:
                                   WidgetStatePropertyAll(Colors.white)),
                         )
@@ -71,7 +71,7 @@ class ItemWidget extends StatelessWidget {
                   child: Container(
                     width: double.infinity,
                     height: 45,
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     clipBehavior: Clip.antiAlias,
                   ),
                 ),

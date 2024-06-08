@@ -12,15 +12,15 @@ class IconWidget extends StatelessWidget {
       blur: 8,
       borderRadius: BorderRadius.circular(50),
       blurColor: Colors.grey,
-      child: Container(
-        decoration: BoxDecoration(shape: BoxShape.circle),
-        padding: EdgeInsets.all(15),
+      overlay: Container(
+        decoration: const BoxDecoration(shape: BoxShape.circle),
+        padding: const EdgeInsets.all(15),
         clipBehavior: Clip.antiAlias,
         child: Image.asset(image, color: AppColor.white, width: 25),
       ),
-      overlay: Container(
-        decoration: BoxDecoration(shape: BoxShape.circle),
-        padding: EdgeInsets.all(15),
+      child: Container(
+        decoration: const BoxDecoration(shape: BoxShape.circle),
+        padding: const EdgeInsets.all(15),
         clipBehavior: Clip.antiAlias,
         child: Image.asset(image, color: AppColor.white, width: 25),
       ),

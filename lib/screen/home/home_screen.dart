@@ -14,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   AnimationController? _controller;
-  List<AnimationInfo> _animationInfo = [];
+  final List<AnimationInfo> _animationInfo = [];
 
   @override
   void initState() {
@@ -41,8 +41,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 450.0.ms,
             duration: 2000.0.ms,
-            begin: Offset(-500.0, 0),
-            end: Offset(0.0, 1.0),
+            begin: const Offset(-500.0, 0),
+            end: const Offset(0.0, 1.0),
           ),
         ],
         controller: _controller!,
@@ -54,8 +54,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 2000.0.ms,
-            begin: Offset(30.0, 1200),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(30.0, 1200),
+            end: const Offset(0.0, 0.0),
           ),
         ],
         controller: _controller!,
@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           ),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
           child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,17 +94,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     SafeArea(
                       child: Container(
                         height: 390,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              15, 15, 15, 0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 25),
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0, 0, 0, 25),
                                 child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -261,7 +261,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       ).animateOnPageLoad(_animationInfo.first),
                                     ),
                                   ),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   Expanded(
                                     child: Container(
                                       width: 100,
@@ -328,7 +328,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       scrollDirection: Axis.vertical,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 460, 0, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0, 460, 0, 0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
@@ -355,7 +356,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   Container(
                                     width: double.infinity,
                                     height: 350,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Padding(
                                       padding:
                                           const EdgeInsetsDirectional.fromSTEB(
@@ -373,7 +374,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                             Expanded(
                                               child: Align(
                                                 alignment:
-                                                    AlignmentDirectional(0, -1),
+                                                    const AlignmentDirectional(
+                                                        0, -1),
                                                 child: Padding(
                                                   padding:
                                                       const EdgeInsetsDirectional
@@ -391,7 +393,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                                                   _animationInfo[
                                                                       1]),
                                                         ),
-                                                        SizedBox(height: 8),
+                                                        const SizedBox(
+                                                            height: 8),
                                                         Expanded(
                                                           child: ItemWidget(
                                                               animationInfo:
@@ -405,7 +408,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                           ]),
                                     ),
                                   ),
-                                  SizedBox(height: 100)
+                                  const SizedBox(height: 100)
                                 ]),
                           ),
                         ),

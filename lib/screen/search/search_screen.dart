@@ -39,7 +39,7 @@ class _SearchScreenState extends State<SearchScreen>
     "assets/shopping-basket.png",
     "assets/layers.png"
   ];
-  Set<Marker> _markers = {};
+  final Set<Marker> _markers = {};
   final placeName = [
     "11,3 mm p",
     "8,5 mm p",
@@ -53,16 +53,16 @@ class _SearchScreenState extends State<SearchScreen>
     "5,9 mm p",
   ];
   final List<LatLng> places = [
-    LatLng(37.7749, -122.4194),
-    LatLng(34.0522, -118.2437),
-    LatLng(40.7128, -74.0060),
-    LatLng(51.5074, -0.1278),
-    LatLng(48.8566, 2.3522),
-    LatLng(35.6895, 139.6917),
-    LatLng(55.7558, 37.6173),
-    LatLng(-33.8688, 151.2093),
-    LatLng(39.9042, 116.4074),
-    LatLng(28.6139, 77.2090),
+    const LatLng(37.7749, -122.4194),
+    const LatLng(34.0522, -118.2437),
+    const LatLng(40.7128, -74.0060),
+    const LatLng(51.5074, -0.1278),
+    const LatLng(48.8566, 2.3522),
+    const LatLng(35.6895, 139.6917),
+    const LatLng(55.7558, 37.6173),
+    const LatLng(-33.8688, 151.2093),
+    const LatLng(39.9042, 116.4074),
+    const LatLng(28.6139, 77.2090),
   ];
 
   Future<void> _setMarkers(bool showMarkerDetail) async {
@@ -75,8 +75,10 @@ class _SearchScreenState extends State<SearchScreen>
           showMarkerDetail: showMarkerDetail,
           id: i.toString(),
         ).toBitmapDescriptor(
-            logicalSize: !showMarkerDetail ? Size(80, 80) : Size(150, 80),
-            imageSize: !showMarkerDetail ? Size(80, 80) : Size(150, 80)),
+            logicalSize:
+                !showMarkerDetail ? const Size(80, 80) : const Size(150, 80),
+            imageSize:
+                !showMarkerDetail ? const Size(80, 80) : const Size(150, 80)),
       ));
       if (mounted) {
         setState(() {});
@@ -131,20 +133,21 @@ class _SearchScreenState extends State<SearchScreen>
               }),
           SafeArea(
             child: Align(
-              alignment: AlignmentDirectional(0, 1),
+              alignment: const AlignmentDirectional(0, 1),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 15, 15, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 15, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
-                          child: Container(
+                          padding:
+                              const EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
+                          child: SizedBox(
                             width: MediaQuery.sizeOf(context).width * 0.7,
                             child: TextFormField(
                               controller: searchController,
@@ -152,37 +155,38 @@ class _SearchScreenState extends State<SearchScreen>
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: false,
-                                labelStyle: TextStyle(
+                                labelStyle: const TextStyle(
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0,
                                 ),
                                 hintText: 'Saint Petersbug',
-                                hintStyle: TextStyle(
+                                hintStyle: const TextStyle(
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0,
                                 ),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(50),
-                                    borderSide:
-                                        BorderSide(color: Colors.transparent)),
+                                    borderSide: const BorderSide(
+                                        color: Colors.transparent)),
                                 focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(50),
-                                    borderSide:
-                                        BorderSide(color: Colors.transparent)),
+                                    borderSide: const BorderSide(
+                                        color: Colors.transparent)),
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(50),
-                                    borderSide:
-                                        BorderSide(color: Colors.transparent)),
+                                    borderSide: const BorderSide(
+                                        color: Colors.transparent)),
                                 filled: true,
                                 fillColor: AppColor.white,
                                 contentPadding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                prefixIcon: Icon(
+                                    const EdgeInsetsDirectional.fromSTEB(
+                                        0, 10, 0, 0),
+                                prefixIcon: const Icon(
                                   Icons.search_sharp,
                                   size: 24,
                                 ),
                               ),
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontFamily: 'Readex Pro',
                                 letterSpacing: 0,
                               ),
@@ -196,7 +200,7 @@ class _SearchScreenState extends State<SearchScreen>
                             color: AppColor.primaryBackground,
                             shape: BoxShape.circle,
                           ),
-                          padding: EdgeInsets.all(13),
+                          padding: const EdgeInsets.all(13),
                           child: Image.asset("assets/filter.png", width: 18),
                         ),
                       ],
@@ -205,7 +209,7 @@ class _SearchScreenState extends State<SearchScreen>
                   KeyboardVisibilityBuilder(
                       builder: (p0, isKeyboardVisible) => !isKeyboardVisible
                           ? Padding(
-                              padding: EdgeInsets.only(
+                              padding: const EdgeInsets.only(
                                   left: 30, right: 30, bottom: 80),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -227,12 +231,12 @@ class _SearchScreenState extends State<SearchScreen>
                                       }
                                     },
                                     elevation: 0,
-                                    color: Color(0xFFFBF5EB),
-                                    padding: EdgeInsets.all(15),
+                                    color: const Color(0xFFFBF5EB),
+                                    padding: const EdgeInsets.all(15),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20),
                                     ),
-                                    offset: Offset(0, -150),
+                                    offset: const Offset(0, -150),
                                     itemBuilder: (BuildContext context) =>
                                         List.generate(
                                       popItemList.length,
@@ -244,7 +248,7 @@ class _SearchScreenState extends State<SearchScreen>
                                                   ? AppColor.primary
                                                   : AppColor.secondaryTextColor,
                                               width: 23),
-                                          SizedBox(width: 15),
+                                          const SizedBox(width: 15),
                                           Text(
                                             popItemList[index],
                                             style: TextStyle(
@@ -262,43 +266,18 @@ class _SearchScreenState extends State<SearchScreen>
                                       image: popItemListImages[selected],
                                     ),
                                   ).animateOnPageLoad(_animationInfo!),
-                                  SizedBox(height: 20),
+                                  const SizedBox(height: 20),
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      IconWidget(
+                                      const IconWidget(
                                         image: "assets/send.png",
                                       ).animateOnPageLoad(_animationInfo!),
                                       Blur(
                                         blur: 8,
                                         borderRadius: BorderRadius.circular(50),
                                         blurColor: Colors.grey,
-                                        child: InkWell(
-                                          onTap: () {
-                                            setState(() {
-                                              isPopUpOpen = !isPopUpOpen;
-                                            });
-                                          },
-                                          child: Container(
-                                            height: 50,
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(50)),
-                                            padding: EdgeInsets.all(15),
-                                            clipBehavior: Clip.antiAlias,
-                                            child: Row(
-                                              children: [
-                                                Icon(Icons.list,
-                                                    color: AppColor.white),
-                                                SizedBox(width: 10),
-                                                Text("List of variants",
-                                                    style: TextStyle(
-                                                        color: AppColor.white))
-                                              ],
-                                            ),
-                                          ),
-                                        ),
                                         overlay: InkWell(
                                           onTap: () {
                                             setState(() {
@@ -310,13 +289,38 @@ class _SearchScreenState extends State<SearchScreen>
                                             decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(50)),
-                                            padding: EdgeInsets.all(15),
+                                            padding: const EdgeInsets.all(15),
                                             clipBehavior: Clip.antiAlias,
                                             child: Row(
                                               children: [
                                                 Icon(Icons.list,
                                                     color: AppColor.white),
-                                                SizedBox(width: 10),
+                                                const SizedBox(width: 10),
+                                                Text("List of variants",
+                                                    style: TextStyle(
+                                                        color: AppColor.white))
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        child: InkWell(
+                                          onTap: () {
+                                            setState(() {
+                                              isPopUpOpen = !isPopUpOpen;
+                                            });
+                                          },
+                                          child: Container(
+                                            height: 50,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(50)),
+                                            padding: const EdgeInsets.all(15),
+                                            clipBehavior: Clip.antiAlias,
+                                            child: Row(
+                                              children: [
+                                                Icon(Icons.list,
+                                                    color: AppColor.white),
+                                                const SizedBox(width: 10),
                                                 Text("List of variants",
                                                     style: TextStyle(
                                                         color: AppColor.white))
@@ -330,7 +334,7 @@ class _SearchScreenState extends State<SearchScreen>
                                 ],
                               ),
                             )
-                          : SizedBox.shrink()),
+                          : const SizedBox.shrink()),
                 ],
               ),
             ),

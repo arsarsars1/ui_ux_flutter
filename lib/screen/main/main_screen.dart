@@ -18,14 +18,14 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   AnimationController? _controller;
-  List<AnimationInfo> _animationInfo = [];
+  final List<AnimationInfo> _animationInfo = [];
   int _selectedTab = 2;
   List navPageList = [
-    SearchScreen(),
-    ChatScreen(),
-    HomeScreen(),
-    FavouriteScreen(),
-    ProfileScreen()
+    const SearchScreen(),
+    const ChatScreen(),
+    const HomeScreen(),
+    const FavouriteScreen(),
+    const ProfileScreen()
   ];
   List iconLists = [
     "assets/find.png",
@@ -47,8 +47,8 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 1000.0.ms,
             duration: 1500.0.ms,
-            begin: Offset(30.0, 1200),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(30.0, 1200),
+            end: const Offset(0.0, 0.0),
           ),
         ],
         controller: _controller!,
@@ -59,7 +59,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Stack(children: [
@@ -70,12 +70,13 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                     alignment: Alignment.bottomCenter,
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.7,
-                      margin: EdgeInsets.only(left: 30, right: 30, bottom: 30),
+                      margin: const EdgeInsets.only(
+                          left: 30, right: 30, bottom: 30),
                       decoration: BoxDecoration(
-                          color: Color(0xFF2b2b2b),
+                          color: const Color(0xFF2b2b2b),
                           borderRadius: BorderRadius.circular(50)),
                       clipBehavior: Clip.antiAlias,
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -92,7 +93,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                                     ? AppColor.primary
                                     : AppColor.black,
                               ),
-                              padding: EdgeInsets.all(13),
+                              padding: const EdgeInsets.all(13),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 iconLists[index],
@@ -106,7 +107,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                       ),
                     ),
                   ).animateOnPageLoad(_animationInfo.first)
-                : SizedBox.shrink(),
+                : const SizedBox.shrink(),
           ),
         ]),
       ),

@@ -26,7 +26,7 @@ class _CalculateWidgetState extends State<CalculateWidget> {
   }
 
   calculate() {
-    timer = Timer.periodic(Duration(microseconds: 100), (timer) {
+    timer = Timer.periodic(const Duration(microseconds: 100), (timer) {
       setState(() {
         values != widget.maxvalue ? values++ : null;
       });
